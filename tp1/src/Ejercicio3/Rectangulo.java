@@ -1,41 +1,41 @@
 package Ejercicio3;
 
 public class Rectangulo {
-        private PuntoGeometrico supIzq; // vértice superior izquierdo
-        private PuntoGeometrico infDer; // vértice inferior derecho
+        private PuntoGeometrico pg1; // vértice superior izquierdo
+        private PuntoGeometrico pg2; // vértice inferior derecho
 
         // Constructor por defecto
         public Rectangulo() {
-            this.supIzq = new PuntoGeometrico(0, 1);
-            this.infDer = new PuntoGeometrico(1, 0);
+            this.pg1 = new PuntoGeometrico(0, 1);
+            this.pg2 = new PuntoGeometrico(1, 0);
         }
 
         // Constructor con puntos
-        public Rectangulo(PuntoGeometrico supIzq, PuntoGeometrico infDer) {
-            this.supIzq = supIzq;
-            this.infDer = infDer;
+        public Rectangulo(PuntoGeometrico pg1, PuntoGeometrico pg2) {
+            this.pg1 = pg1;
+            this.pg2 = pg2;
         }
 
         // Getters y Setters
-        public PuntoGeometrico getSupIzq() { return supIzq; }
-        public void setSupIzq(PuntoGeometrico supIzq) { this.supIzq = supIzq; }
+        public PuntoGeometrico getPg1() { return pg1; }
+        public void setPg1(PuntoGeometrico pg1) { this.pg1 = pg1; }
 
-        public PuntoGeometrico getInfDer() { return infDer; }
-        public void setInfDer(PuntoGeometrico infDer) { this.infDer = infDer; }
+        public PuntoGeometrico getPg2() { return pg2; }
+        public void setPg2(PuntoGeometrico pg2) { this.pg2 = pg2; }
 
         // Calcular base y altura
         public double getBase() {
-            return Math.abs(infDer.getX() - supIzq.getX());
+            return Math.abs(pg2.getX() - pg1.getX());
         }
 
         public double getAltura() {
-            return Math.abs(supIzq.getY() - infDer.getY());
+            return Math.abs(pg1.getY() - pg2.getY());
         }
 
         // Desplazar el rectángulo
         public void desplazar(double dx, double dy) {
-            supIzq.desplazar(dx, dy);
-            infDer.desplazar(dx, dy);
+            pg1.desplazar(dx, dy);
+            pg2.desplazar(dx, dy);
         }
 
         // Calcular área

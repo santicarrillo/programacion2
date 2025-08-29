@@ -1,14 +1,19 @@
 package SistemaControlGastoPublico;
 
+import java.util.ArrayList;
+
 public class Ciudad {
     private int habitantes;
     private String nombre;
     private double gastoPublico;
-    private int imp1;
+    ArrayList<Impuesto>impuestos ;
+
+
 
     public Ciudad(int habitantes, String nombre) {
         this.habitantes = habitantes;
         this.nombre = nombre;
+        this.impuestos= new ArrayList<>();
     }
     public int getHabitantes() {
         return habitantes;
@@ -23,9 +28,32 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
-    public boolean EsciudadGrande(){
+    public ArrayList<Impuesto> getImpuestos() {
+        return impuestos;
+    }
+
+    public double getGastoPublico() {
+        return gastoPublico;
+    }
+
+    public void setGastoPublico(double gastoPublico) {
+        this.gastoPublico = gastoPublico;
+    }
+
+    public boolean esCiudadGrande(){
         return habitantes>100000;
     }
-    public
+    public double calculaGasto(){
+        double total=0;
+        if (esCiudadGrande()){
+            for (Impuesto imp:impuestos){
+                total+=imp.getMonto();
+            }
+        }
+        return total;
+    }
+    public boolean estaEnDeficit(){
+        return this.gastoPublico>calculaGasto();
+    }
 
 }
