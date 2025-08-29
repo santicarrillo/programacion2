@@ -26,8 +26,7 @@ public class Provincia {
 
     public int cantCiudadesDeficit() {
         int total = 0;
-        for (int i = 0; i < ciudades.size(); i++) {
-            Ciudad c = ciudades.get(i);
+        for (Ciudad c : ciudades) {
             if (c.estaEnDeficit()) {
                 total++;
             }

@@ -40,7 +40,6 @@ public class Pais {
     }
     public ArrayList<Provincia> provinciasConMayorDeficit() {
         ArrayList<Provincia> resultado = new ArrayList<>();// creo un objeto con todas las provincias q cumplen
-
         for (int i = 0; i < provincias.size(); i++) {
             Provincia prov = provincias.get(i); // obtener la provincia actual
             if (prov.tieneMayorDeficit()) {
