@@ -8,17 +8,27 @@ public class Encuesta {
     private Date fecha;
     private ArrayList<Pregunta> preguntas;
     private ArrayList<Respuesta> respuestas;
+    private Empleado empleado;
     private PersonaEnCuestada enCuestada; // la persona que responde
     private int maxp = 10, maxr = 10;
 
     public Encuesta(PersonaEnCuestada enCuestada, Date fecha, int id,
-                    ArrayList<Pregunta> preguntas, ArrayList<Respuesta> respuestas,
+                    ArrayList<Pregunta> preguntas, ArrayList<Respuesta> respuestas,Empleado empleado,
                     int maxp, int maxr) {
         this.enCuestada = enCuestada;
         this.fecha = fecha;
         this.id = id;
         this.preguntas = new ArrayList<>(maxp);
         this.respuestas = new ArrayList<>(maxr);
+        this.empleado = empleado;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     // getters y setters

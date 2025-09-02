@@ -1,6 +1,4 @@
-package EstablesimientoDeportivo;
-
-import SistemaControlGastoPublico.Provincia;
+package establecimientoDeportivo;
 
 public class Cancha {
     private String Tipo;

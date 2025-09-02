@@ -1,4 +1,4 @@
-package EstablesimientoDeportivo.src;
+package establecimientoDeportivo.src;
 
 public class EstablecimientoDeportivoPOO {
 }

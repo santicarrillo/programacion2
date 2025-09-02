@@ -1,4 +1,4 @@
-package EstablesimientoDeportivo;
+package establecimientoDeportivo;
 
 import java.util.ArrayList;
 
