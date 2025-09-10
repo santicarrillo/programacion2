@@ -12,7 +12,7 @@ class Empresa {
     }
 
     public String exportarRegistro() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();// hace salto de linea y devuelve la lista del arreglo
         for (Persona p : personas) {
             sb.append(p.toString()).append("\n");
         }

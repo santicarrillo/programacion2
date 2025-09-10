@@ -10,14 +10,14 @@ public class ProductoCongelado extends ProductoRefrigerado {
     private double tempMantenimiento;
     private String granjaorigen;
 
-    public ProductoCongelado(LocalDateTime fechaVencimiento, int nrolote,
-                             int codgsuperalm, LocalDateTime fechaEnvasado,
-                             String granjaorigen, double tempMantenimiento) {
-        super(fechaVencimiento, nrolote);
-        this.codgsuperalm = codgsuperalm;
-        this.fechaEnvasado = fechaEnvasado;
-        this.granjaorigen = granjaorigen;
-        this.tempMantenimiento = tempMantenimiento;
+    public ProductoCongelado(LocalDateTime fechaEnvasado, String granjaorigen, LocalDateTime fechaVencimiento, int nrolote, int codgsuperalm, LocalDateTime fechaEnvasado1, String granjaorigen1, double tempMantenimiento,
+                             int codgsuperalm1, LocalDateTime fechaEnvasado2, String granjaorigen2,
+                             double tempMantenimiento1) {
+        super(fechaEnvasado, granjaorigen, fechaVencimiento, nrolote, codgsuperalm, fechaEnvasado1, granjaorigen1, tempMantenimiento);
+        this.codgsuperalm = codgsuperalm1;
+        this.fechaEnvasado = fechaEnvasado2;
+        this.granjaorigen = granjaorigen2;
+        this.tempMantenimiento = tempMantenimiento1;
     }
 
     @Override
