@@ -1,13 +1,11 @@
 package convertidorMedidas;
 
-public class Conversiones {
+public class Conversion {
     public static final double CM_POR_PULGADA = 2.54;
     public static final double KILO_POR_LIBRA = 0.453592;
     public static final double LITROS_POR_GALON = 3.78541;
 
-    // Constructor privado para evitar instanciación
-    private Conversiones() {}
-
+    private Conversion(){};
     // Métodos estáticos
     public static double centimetrosAPulgadas(double cm) {
         return cm / CM_POR_PULGADA;

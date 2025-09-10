@@ -2,18 +2,19 @@ package avicola;
 
 import java.time.LocalDateTime;
 
-public class ProductoRefrigerado extends Producto {
+public class ProductoRefrigerado extends ProductoFresco {
     private LocalDateTime fechaEnvasado;
     private int codgsuperalm;
     private double tempMantenimiento;
     private String granjaorigen;
 
-    public ProductoRefrigerado(LocalDateTime fechaVencimiento, int nrolote, int codgsuperalm, LocalDateTime fechaEnvasado,
-                               String granjaorigen, double tempMantenimiento) {
-        super(fechaVencimiento, nrolote);
+    public ProductoRefrigerado(LocalDateTime fechaEnvasado, String granjaorigen, LocalDateTime fechaVencimiento,
+                               int nrolote, int codgsuperalm,
+                               LocalDateTime fechaEnvasado1, String granjaorigen1, double tempMantenimiento) {
+        super(fechaEnvasado, granjaorigen, fechaVencimiento, nrolote);
         this.codgsuperalm = codgsuperalm;
-        this.fechaEnvasado = fechaEnvasado;
-        this.granjaorigen = granjaorigen;
+        this.fechaEnvasado = fechaEnvasado1;
+        this.granjaorigen = granjaorigen1;
         this.tempMantenimiento = tempMantenimiento;
     }
 

@@ -1,9 +1,10 @@
 package avicola.congelado;
 import  avicola.Producto;
+import avicola.ProductoRefrigerado;
 
 import java.time.LocalDateTime;
 
-public class ProductoCongelado extends Producto {
+public class ProductoCongelado extends ProductoRefrigerado {
     private LocalDateTime fechaEnvasado;
     private int codgsuperalm;
     private double tempMantenimiento;
