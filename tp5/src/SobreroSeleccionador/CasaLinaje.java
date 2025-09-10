@@ -1,7 +1,14 @@
 package SobreroSeleccionador;
 
-public class CasaLinaje extends Casa{
+import java.util.ArrayList;
 
+public class CasaLinaje extends Casa{
+    private ArrayList<Alumno>alumnos;
+
+    public CasaLinaje(String nombre, int maxAl) {
+        super(nombre, maxAl);
+        this.alumnos= new ArrayList<>(maxAl);
+    }
 
     @Override
     public boolean agregarAlumno(Alumno a) {

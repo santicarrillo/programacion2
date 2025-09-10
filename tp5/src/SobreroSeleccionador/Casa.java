@@ -3,14 +3,29 @@ package SobreroSeleccionador;
 import java.util.ArrayList;
 
 public class Casa {
-    private ArrayList<Alumno>alumnos;
-    private ArrayList<String>cualidades;
-    private int maxAl;
+    protected ArrayList<Alumno>alumnos;
+    protected ArrayList<String>cualidades;
+    private ArrayList<Casa> enemigas;
+    protected int maxAl;
     private String nombre;
 
     public Casa(String nombre,int maxAl) {
         this.alumnos = new ArrayList<>(maxAl);
+        this.enemigas = new ArrayList<>();
         this.nombre=nombre;
+    }
+    public void addEnemiga(Casa c) {
+        if (!enemigas.contains(c) && !this.equals(c)) {
+            enemigas.add(c);
+            c.enemigas.add(this); // relación recíproca
+        }
+    }
+    public ArrayList<Alumno>getAlumnos(){
+            return new ArrayList<>(alumnos);
+    }
+
+    public ArrayList<Casa> getEnemigas() {
+        return new ArrayList<>(enemigas);
     }
 
     public boolean agregarAlumno(Alumno a) {
@@ -23,6 +38,12 @@ public class Casa {
         }
     }
 
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Casa casa = (Casa) obj;
+        return nombre.equalsIgnoreCase(casa.nombre);
+    }
 
 
 }

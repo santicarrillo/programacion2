@@ -59,7 +59,8 @@ public class Alumno {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        Casa casa = (Casa) obj;
-        return nombre.equalsIgnoreCase(casa.nombre);
+        Alumno alumno = (Alumno) obj;
+        return nombre.equalsIgnoreCase(alumno.nombre);
     }
+
 }
