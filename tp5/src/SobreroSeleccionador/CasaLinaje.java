@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class CasaLinaje extends Casa{
     private ArrayList<Alumno>alumnos;
 
-    public CasaLinaje(String nombre, int maxAl) {
-        super(nombre, maxAl);
+    public CasaLinaje(String nombre, int maxAl,CasaEnemistada enemistada) {
+        super(nombre, maxAl,enemistada);
         this.alumnos= new ArrayList<>(maxAl);
     }
 

@@ -3,29 +3,20 @@ package SobreroSeleccionador;
 import java.util.ArrayList;
 
 public class Casa {
-    protected ArrayList<Alumno>alumnos;
-    protected ArrayList<String>cualidades;
-    private ArrayList<Casa> enemigas;
-    protected int maxAl;
+    protected ArrayList<Alumno> alumnos;
+    protected ArrayList<String> cualidades;
+    private int maxAl;
     private String nombre;
 
-    public Casa(String nombre,int maxAl) {
-        this.alumnos = new ArrayList<>(maxAl);
-        this.enemigas = new ArrayList<>();
-        this.nombre=nombre;
-    }
-    public void addEnemiga(Casa c) {
-        if (!enemigas.contains(c) && !this.equals(c)) {
-            enemigas.add(c);
-            c.enemigas.add(this); // relación recíproca
-        }
-    }
-    public ArrayList<Alumno>getAlumnos(){
-            return new ArrayList<>(alumnos);
+    public Casa(String nombre, int maxAl) {
+        this.alumnos = new ArrayList<>();
+        this.cualidades = new ArrayList<>();
+        this.maxAl = maxAl;
+        this.nombre = nombre;
     }
 
-    public ArrayList<Casa> getEnemigas() {
-        return new ArrayList<>(enemigas);
+    public ArrayList<Alumno>getAlumnos() {
+        return new ArrayList<>(alumnos);
     }
 
     public boolean agregarAlumno(Alumno a) {
@@ -38,12 +29,52 @@ public class Casa {
         }
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Casa casa = (Casa) obj;
-        return nombre.equalsIgnoreCase(casa.nombre);
+    public ArrayList<String> getCualidades() {
+        return new ArrayList<>(cualidades);
     }
 
+    public void agregarCualidad(String cc) {
+        if (!cualidades.contains(cc.toUpperCase())) {
+            cualidades.add(cc.toUpperCase());
+        }
+    }
+
+    public int getMaxAl() {
+        return maxAl;
+    }
+
+    public void setMaxAl(int maxAl) {
+        this.maxAl = maxAl;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        try {
+            Casa casa = (Casa) obj;
+
+            return (this.alumnos.containsAll(casa.getAlumnos()) && this.alumnos.size() == casa.getAlumnos().size()) // Mismo alumnos
+                    && (this.cualidades.containsAll(casa.getCualidades()) && this.cualidades.size() == casa.getCualidades().size()) // Mismo cualidades
+                    && this.maxAl == casa.getMaxAl() // Mismo maxAl
+                    && this.nombre.equals(casa.getNombre()); // Mismo nombre
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 }
