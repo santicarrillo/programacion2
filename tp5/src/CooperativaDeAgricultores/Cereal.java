@@ -3,44 +3,42 @@ package CooperativaDeAgricultores;
 import java.util.ArrayList;
 
 public class Cereal {
-    ArrayList<Mineral> minerales;
-    private int nombre;
+    private ArrayList<String> mineralesRequeridos;
+    private String nombre;
+    public Cereal(String nombre) {
+        super();
+        this.nombre = nombre;
+        mineralesRequeridos = new ArrayList<String>();
+    }
 
-    public Cereal(int nombre) {
-        this.minerales = new  ArrayList<>();
+    public void agregarMineral(String mm) {
+        if (!mineralesRequeridos.contains(mm))
+            mineralesRequeridos.add(mm);
+    }
+
+    public boolean requiereMineral(String mm) {
+        return mineralesRequeridos.contains(mm);
+    }
+
+    public void borrarMineral(String mm) {
+        mineralesRequeridos.remove(mm);
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void agregarMineral(String mineral) {
-        if (!minerales.contains(mineral)) {
-            minerales.add(mineral);
-        }
-    }
-
-    public boolean requiereMineral(String mm){
-        return minerales.contains(mm);
-    }
-
-    public void borraMineral(String mm){
-        minerales.remove(mm);
-    }
-
-    // SE PUEDE SEMBRAR EL LOTE
-
-    public boolean acptalote(Lote ll){
-        for (int i = 0; i < minerales.size(); i++) {
-            String mineral = minerales.get(i);
-            if(!ll.contienemineral(mineral)){
+    // SE PUEDE SEMBRAR EN EL LOTE LL
+    public boolean aceptaLote(Lote ll) {
+        for (int i = 0; i< mineralesRequeridos.size(); i++) {
+            String mm = mineralesRequeridos.get(i);
+            if (!ll.contieneMineral(mm)) {
                 return false;
             }
         }
         return true;
     }
-
-
-
-
-
-
 
 }
