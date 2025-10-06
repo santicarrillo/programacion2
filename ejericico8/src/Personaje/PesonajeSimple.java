@@ -1,7 +1,7 @@
 package Personaje;
 
 public class PesonajeSimple extends ElemntoPersonaje{
-    private int peso,edad;
+    private int peso, edad;
             private Fruta fruta;
     private  static int fuerza=125;
 
@@ -32,5 +32,8 @@ public class PesonajeSimple extends ElemntoPersonaje{
         fuerza = nuevafuerza;
     }
 
-
+    @Override
+    public int cantidadPersonaje() {
+        return 1;
+    }
 }
