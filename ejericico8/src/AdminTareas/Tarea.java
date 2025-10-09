@@ -28,5 +28,6 @@ public abstract  class Tarea {
     public abstract ArrayList<String> getaccion();
     public abstract int tiempoEstimado();
     public  abstract double getCosto();
+    public abstract int getCantTareassimples();
 
 }

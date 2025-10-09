@@ -30,9 +30,10 @@ public class TareaCompuestaRepetitiva extends TareaCompuesta{
 
     @Override
     public ArrayList<String> getaccion() {
+        ArrayList<String> aux= super.getaccion();
         ArrayList<String> acciones = new ArrayList<>();
         for (int i = 0; i < repeticiones; i++) {
-            acciones.addAll(super.getaccion());
+            acciones.addAll(aux);
         }
         return acciones;
     }

@@ -51,5 +51,10 @@ public class TareaSimple extends Tarea{
         acciones.add(this.tarea);
         return acciones;
     }
+
+    @Override
+    public int getCantTareassimples() {
+        return 1;
+    }
 }
 
