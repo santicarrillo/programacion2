@@ -4,6 +4,7 @@ public class Pelicula extends ItemAlquiler {
 
     private  String infoPelicula;
     private  int stock;
+    private static  int sin_stock=0;
 
     public Pelicula(String Titulo, LocalDate fechaLimite, Cliente cliente, String infoPelicula, int stock) {
         super(Titulo, fechaLimite, cliente);
@@ -13,7 +14,7 @@ public class Pelicula extends ItemAlquiler {
 
    @Override
     public boolean sepuedeAlquilar(){
-        if (this.stock == 0){
+        if (this.stock == sin_stock){
             return false;
         }
         return true;
