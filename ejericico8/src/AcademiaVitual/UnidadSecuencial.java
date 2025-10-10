@@ -18,10 +18,10 @@ public class UnidadSecuencial extends UnidadEvaluacion{
     }
 
     @Override
-    public ArrayList<String> getpreguntas() {
+    public ArrayList<String> getConceptos() {
         ArrayList<String> conceptos = new ArrayList<>();
         for (UnidadEvaluacion p:partes){
-           ArrayList<String>subconceptos= p.getpreguntas();
+           ArrayList<String>subconceptos= p.getConceptos();
            for (String concepto : subconceptos){
                if (!conceptos.contains(concepto)){
                    conceptos.add(concepto);
@@ -32,10 +32,10 @@ public class UnidadSecuencial extends UnidadEvaluacion{
     }
 
     @Override
-    public int getpuntaje() {
+    public int getCantpuntaje() {
         int total=0;
         for (UnidadEvaluacion u : partes){
-            total += u.getpuntaje();
+            total += u.getCantpuntaje();
         }
         return total;
     }

@@ -5,12 +5,13 @@ import java.util.ArrayList;
 public class TareaCompuesta extends Tarea{
     private ArrayList<Tarea> tareas;
     private String especialidad;
-    private double presioTarea;
+    private double precioTarea;
 
     public TareaCompuesta(String nombre, String implementacion, String especialidad) {
         super(nombre, implementacion);
         this.especialidad = especialidad;
         this.tareas = new ArrayList<>();
+        this.precioTarea = 0;
     }
     public void addTarea(Tarea t){
         if (t!=null){
@@ -42,7 +43,7 @@ public class TareaCompuesta extends Tarea{
         for (Tarea t:tareas){
             costo += t.getCosto();
         }
-        return costo+this.getCantTareassimples()*presioTarea;
+        return costo+this.getCantTareassimples()* precioTarea;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package AcademiaVitual;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class UnidadOptativa extends UnidadEvaluacion{
 
@@ -15,10 +14,10 @@ public class UnidadOptativa extends UnidadEvaluacion{
         opciones.add(opcion);
     }
     @Override
-    public ArrayList<String> getpreguntas() {
+    public ArrayList<String> getConceptos() {
         ArrayList<String> conceptos = new ArrayList<>();
         for (UnidadEvaluacion parte : opciones) {
-            for (String concepto : parte.getpreguntas()) {
+            for (String concepto : parte.getConceptos()) {
                 if (!conceptos.contains(concepto)) {
                     conceptos.add(concepto);
                 }
@@ -28,10 +27,10 @@ public class UnidadOptativa extends UnidadEvaluacion{
     }
 
     @Override
-    public int getpuntaje() {
+    public int getCantpuntaje() {
         int max = 0;
         for (UnidadEvaluacion u : opciones) {
-            max = Math.max(max, u.getpuntaje());
+            max = Math.max(max, u.getCantpuntaje());
         }
         return max;
     }

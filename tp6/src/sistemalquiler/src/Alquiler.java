@@ -16,9 +16,6 @@ public class Alquiler {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
 
     public LocalDate getFechaLimite() {
         return fechaLimite;

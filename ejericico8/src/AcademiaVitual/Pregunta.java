@@ -21,12 +21,12 @@ public class Pregunta extends UnidadEvaluacion{
 
 
     @Override
-    public ArrayList<String> getpreguntas() {
+    public ArrayList<String> getConceptos() {
         return conceptos;
     }
 
     @Override
-    public int getpuntaje() {
+    public int getCantpuntaje() {
         return this.puntaje;
     }
 

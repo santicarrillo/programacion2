@@ -37,11 +37,11 @@ public class Evalucion {
 
             // Mostrar resultados
             System.out.println("🧠 Evaluación Final");
-            System.out.println("Puntaje total: " + evaluacionFinal.getpuntaje());
+            System.out.println("Puntaje total: " + evaluacionFinal.getCantpuntaje());
             System.out.println("Tiempo estimado: " + evaluacionFinal.gettiempoestimado() + " minutos");
 
             System.out.println("Conceptos evaluados:");
-            ArrayList<String> conceptos = evaluacionFinal.getpreguntas();
+            ArrayList<String> conceptos = evaluacionFinal.getConceptos();
             for (String concepto : conceptos) {
                 System.out.println("- " + concepto);
             }
