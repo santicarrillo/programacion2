@@ -1,19 +1,20 @@
 package Seguro;
 
-import Seguro.FormaCalculo.FormaCalculo;
+import Seguro.busquedaYfiltro.Buscador;
 
 import java.util.ArrayList;
 
 public class SegIntegrador extends Seguro {
     private double montoasegurado;
     private ArrayList<Seguro> seguros;
-    public SegIntegrador(String descripcion, long dni, double montoFijo, long poliza, FormaCalculo calculo,double monto) {
-        super(descripcion, dni, montoFijo, poliza, calculo);
-        this.montoasegurado =monto;
+
+    public SegIntegrador(String descripcion, long dni, double montoasegurado) {
+        super(descripcion, dni);
+        this.montoasegurado = montoasegurado;
         this.seguros = new ArrayList<Seguro>();
     }
 
-    public void addseguros(Seguro s) {
+    public void addseguros(SeguroSimple s) {
         seguros.add(s);
 
     }
@@ -21,7 +22,7 @@ public class SegIntegrador extends Seguro {
     public double getMontoFijo() {
         double total=0;
         for (Seguro s: seguros) {
-            total +=  s.getMontoFijo();
+            total += montoasegurado;
         }
         return total;
     }
@@ -37,5 +38,19 @@ public class SegIntegrador extends Seguro {
         return max;
     }
 
+    @Override
+    public ArrayList<Seguro> buscar(Buscador buscador) {
+        ArrayList<Seguro> resultado = new ArrayList<>();
+        for (Seguro s : seguros) {
+                resultado.addAll(s.buscar(buscador));
 
+        }
+        return resultado;
+
+    }
+
+    @Override
+    public double calcularCosto() {
+        return 0;
+    }
 }

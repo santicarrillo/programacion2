@@ -1,6 +1,6 @@
 package Seguro.busquedaYfiltro;
 
-import Seguro.Seguro;
+import Seguro.*;
 
 public class FiltrpDni extends  Buscador {
 

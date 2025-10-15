@@ -1,56 +1,32 @@
 package Seguro;
 
-import Seguro.FormaCalculo.FormaCalculo;
+import Seguro.busquedaYfiltro.Buscador;
+
+import java.util.ArrayList;
 
 public abstract class Seguro {
-    protected String descripcion;
-    protected long poliza, dni;
-    protected double montoFijo;
-    private FormaCalculo calculo;
 
-    public Seguro(String descripcion, long dni, double montoFijo, long poliza,FormaCalculo calculo) {
+    protected String descripcion;
+    protected long dni;
+
+    public Seguro(String descripcion, long dni) {
         this.descripcion = descripcion;
         this.dni = dni;
-        this.montoFijo = montoFijo;
-        this.poliza = poliza;
-        this.calculo = calculo;
     }
 
-    public double getMontoFijo() {
-        return montoFijo;
-    }
-
-    public void setMontoFijo(double montoFijo) {
-        this.montoFijo = montoFijo;
-    }
+    public abstract double getMontoFijo();
+    public abstract long getPoliza();
+    public abstract double calcularCosto();
+    public abstract ArrayList<Seguro>buscar(Buscador buscador);
 
     public String getDescripcion() {
         return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
     public long getDni() {
         return dni;
     }
 
-    public double CalculaCosto() {
-        return calculo.calcularCosto(this);
-    }
-
-    public void setCalculo(FormaCalculo calculo) {
-        this.calculo = calculo;
-    }
-
-    public long getPoliza() {
-        return poliza;
-    }
-
-    public void setPoliza(long poliza) {
-        this.poliza = poliza;
-    }
 
 
 }

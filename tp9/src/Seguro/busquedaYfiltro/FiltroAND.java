@@ -1,6 +1,7 @@
 package Seguro.busquedaYfiltro;
 
 import Seguro.Seguro;
+import Seguro.SeguroSimple;
 
 public class FiltroAND extends Buscador {
     private Buscador b1,b2;

@@ -1,6 +1,6 @@
 package Seguro.FormaCalculo;
 
-import Seguro.Seguro;
+import Seguro.SeguroSimple;
 
 public class FormaCalculoPorseg extends FormaCalculo {
     private int porcentaje;
@@ -11,7 +11,7 @@ public class FormaCalculoPorseg extends FormaCalculo {
     }
 
     @Override
-    public double calcularCosto(Seguro seguro) {
+    public double calcularCosto(SeguroSimple seguro) {
         return (seguro.getMontoFijo()*porcentaje)/max;
     }
 }

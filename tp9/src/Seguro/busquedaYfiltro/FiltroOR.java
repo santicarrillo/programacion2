@@ -1,6 +1,6 @@
 package Seguro.busquedaYfiltro;
 
-import Seguro.Seguro;
+import Seguro.*;
 
 public class FiltroOR extends Buscador {
     private Buscador b1,b2;

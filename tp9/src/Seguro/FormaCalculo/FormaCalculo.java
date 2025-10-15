@@ -1,8 +1,8 @@
 package Seguro.FormaCalculo;
 
-import Seguro.Seguro;
+import Seguro.SeguroSimple;
 
 public abstract class FormaCalculo {
-     public abstract double calcularCosto(Seguro seguro);
+     public abstract double calcularCosto(SeguroSimple seguro);
 
 }

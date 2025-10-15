@@ -1,10 +1,10 @@
 package Seguro.FormaCalculo;
 
-import Seguro.Seguro;
+import Seguro.SeguroSimple;
 
 public class FormaMontoFijo extends FormaCalculo {
    @Override
-    public double calcularCosto(Seguro s) {
+    public double calcularCosto(SeguroSimple s) {
         return s.getMontoFijo();
     }
 }
