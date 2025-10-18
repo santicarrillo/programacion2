@@ -1,7 +1,6 @@
 package Seguro.busquedaYfiltro;
 
 import Seguro.Seguro;
-import Seguro.SeguroSimple;
 
 public class FiltrarMonto extends Buscador {
 
