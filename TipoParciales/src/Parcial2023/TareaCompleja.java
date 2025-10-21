@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class TareaCompleja extends TareaCompuesta{
 
-
+    private int tiempoEstimado;
     public TareaCompleja(int cantEmpleado, String nombre, int tiempoEstimado) {
         super(cantEmpleado, nombre, tiempoEstimado);
     }
@@ -38,7 +38,7 @@ public class TareaCompleja extends TareaCompuesta{
     public int getTiempoEstimado() {
         int total= 0;
         for (Presupuesto p : presupuestos){
-            total+= p.tiempoEstimado;
+            total+= pt;
         }
         return total;
     }
