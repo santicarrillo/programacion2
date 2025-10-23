@@ -12,6 +12,6 @@ public class CalculaBueno extends CalculaAp {
 
     @Override
     public double Calcula(Agente a) {
-        return a.getvelocidad()*a.getingenio()* a.getExperiencia()this.multiplicador;
+        return a.getvelocidad()*a.getingenio()* this.multiplicador;
     }
 }

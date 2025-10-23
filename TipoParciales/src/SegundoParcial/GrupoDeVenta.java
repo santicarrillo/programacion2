@@ -1,4 +1,4 @@
 package SegundoParcial;
 
-public class GrupoDeVenta extends Empresa{
+public class GrupoDeVenta extends SegundoParcial.Venta {
 }

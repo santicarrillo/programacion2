@@ -1,4 +1,7 @@
 package SegundoParcial;
 
-public class Empresa {
+public abstract class Empresa {
+
+
+    public  abstract int getganacias();
 }
