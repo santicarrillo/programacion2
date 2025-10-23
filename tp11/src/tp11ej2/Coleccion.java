@@ -56,7 +56,7 @@ public class Coleccion extends Elemento {
         return null;
     }*/
 public boolean tienefiguritas() {
-    return !this.elementos.isEmpty();
+    return !elementos.isEmpty();
 }
     @Override
     public Elemento copia(Condicion condicion) {

@@ -12,11 +12,7 @@ public class Cmultiplicador extends Calculador {
 
         @Override
         public double calcula(FiguritaLimite fl) {
-            double resultado=fl.getprecio()* Multiplicador-fl.getUnidadDis();;
-            if (resultado > fl.getprecio()) {
+            double resultado=fl.getprecio()* Multiplicador-fl.getUnidadDis();
                 return resultado;
-            }else {
-                 return fl.getprecio();
-            }
         }
 }

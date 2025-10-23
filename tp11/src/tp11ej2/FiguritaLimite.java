@@ -25,7 +25,11 @@ public class FiguritaLimite extends Figura{
 
     @Override
     public double getprecio() {
-        return getCalculador();
+        double presio= getprecio();
+        if(presio>getCalculador()){
+            presio=getCalculador();
+        }
+        return presio;
     }
 
     @Override

@@ -12,10 +12,6 @@ public class Cresta extends Calculador {
     @Override
     public double calcula(FiguritaLimite fl) {
         double resultado= fl.getprecio()-resta;
-        if (resultado> fl.getprecio()){
             return resultado;
-        }else {
-            return fl.getprecio();
-        }
     }
 }
