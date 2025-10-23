@@ -16,7 +16,7 @@ public class PresupuestoBasico extends Presupuesto{
 
     @Override
     public int CantEmpleados() {
-        return this.CantEmpleado;
+        return ;
     }
 
     @Override
@@ -28,7 +28,6 @@ public class PresupuestoBasico extends Presupuesto{
     public double getcalcula() {
         return  formaCalculo.calcula(this);
     }
-
 
 
     @Override
