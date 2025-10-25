@@ -1,5 +1,7 @@
 package Parcial2023Printer3D.src;
 
+import Parcial2023Printer3D.src.Condicion.Condicion;
+
 import java.util.ArrayList;
 
 public abstract class Elemento {
@@ -48,7 +50,10 @@ public abstract class Elemento {
     public abstract double getTiempoEstimado();
     public abstract double cantidadPla();
     public abstract ArrayList<String> getColor();
-    
+    public  ArrayList<Pieza>Buscar(Condicion c){
+
+    }
+
     /*cantidad de PLA necesario por
     el precio del gramo PLA más la cantidad de segundos de impresión por un costo de segundo de impresión. */
     public  double getCosto(Elemento ee){

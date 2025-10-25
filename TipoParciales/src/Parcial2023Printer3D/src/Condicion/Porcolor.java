@@ -13,8 +13,9 @@ public class Porcolor extends Condicion{
     public boolean cumple(Elemento e) {
         for (String c: e.getColor()){
             if (c.equals(color)){
-                return
+                return  true;
             }
         }
+        return false;
     }
 }
