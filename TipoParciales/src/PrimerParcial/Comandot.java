@@ -11,5 +11,7 @@ public  abstract class Comandot {
     public abstract ArrayList<String> getHabilidades();
 
     public abstract ArrayList<Agente> buscar(Buscar b);
+
+    public abstract Comandot getcopia();
 }
 

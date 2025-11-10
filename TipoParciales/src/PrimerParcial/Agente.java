@@ -62,4 +62,21 @@ public abstract class Agente extends  Comandot{
     }
     public abstract double calcular();
 
+
+    @Override
+    public Comandot getcopia() {
+            Agente copia = creaObj();
+                for (String s: habilidades){
+                }
+            return copia;
+
+    }
+
+    protected Agente creaObj() {
+        return new Agente(getingenio(),
+                getHabilidades(),
+                getingenio(),
+                getNombre(),
+                getvelocidad());
+    }
 }
