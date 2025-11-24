@@ -6,8 +6,8 @@ public class PitufoRebelde extends Pitufo {
     private double menos;
     private int resto;
 
-    public PitufoRebelde(ArrayList<String> habilidades, String nombre, double velocidad, int creatividad, int experiencia, double menos, int resto) {
-        super(habilidades, nombre, velocidad, creatividad, experiencia);
+    public PitufoRebelde( String nombre, double velocidad, int creatividad, int experiencia, double menos, int resto) {
+        super( nombre, velocidad, creatividad, experiencia);
         this.menos = menos;
         this.resto = resto;
     }
@@ -46,6 +46,11 @@ public class PitufoRebelde extends Pitufo {
     @Override
     public double getVelocidad() {
         return this.getVelocidad() - getMenos();
+    }
+
+    @Override
+    public Pitufo cascaron() {
+        return new PitufoRebelde(getNombre(),getVelocidad(),getCreatividad(),getExperiencia(),getMenos(),getResto());
     }
 }
 

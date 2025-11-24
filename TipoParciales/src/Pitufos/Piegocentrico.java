@@ -1,12 +1,10 @@
 package Pitufos;
 
-import java.util.ArrayList;
-
-public class Pegocentrico extends Pitufo {
+public class Piegocentrico extends Pitufo {
     private int multiplicador;
 
-    public Pegocentrico(ArrayList<String> habilidades, String nombre, double velocidad, int creatividad, int experiencia, int multiplicador) {
-        super(habilidades, nombre, velocidad, creatividad, experiencia);
+    public Piegocentrico(String nombre, double velocidad, int creatividad, int experiencia, int multiplicador) {
+        super(nombre, velocidad, creatividad, experiencia);
         this.multiplicador = multiplicador;
     }
 
@@ -30,5 +28,10 @@ public class Pegocentrico extends Pitufo {
     @Override
     public int getCreatividad() {
         return super.getCreatividad()* getMultiplicador();
+    }
+
+    @Override
+    public Pitufo cascaron() {
+        return new Piegocentrico(getNombre(),getVelocidad(),getCreatividad(),getExperiencia(),getMultiplicador());
     }
 }

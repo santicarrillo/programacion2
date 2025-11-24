@@ -33,7 +33,7 @@ public class FiguritaLimite extends Figura{
     }
 
     @Override
-    public Elemento copia(Condicion condicion) {
-
+   protected Figura cascaron(){
+        return new FiguritaLimite(getNombre(),getAlbum(),getnumero(),getprecio(),getUnidadDis(),calculador);
     }
 }
