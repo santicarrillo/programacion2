@@ -54,10 +54,10 @@ public class PiezaCompuesta extends Elemento{
 
     @Override
     public ArrayList<Pieza> Buscar(Condicion c) {
-        ArrayList<Pieza> resultado = new ArrayList<>();
+        ArrayList<Elemento> resultado = new ArrayList<>();
         for (Elemento e : elementos){
             if (c.cumple(e)){
-                resultado.add((Pieza) e);
+                resultado.add( e);
             }
         }
         return resultado;

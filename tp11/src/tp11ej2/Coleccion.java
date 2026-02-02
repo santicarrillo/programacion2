@@ -58,19 +58,37 @@ public class Coleccion extends Elemento {
 public boolean tienefiguritas() {
     return !elementos.isEmpty();
 }
+
     @Override
-    public Elemento copia(Condicion condicion) {
-        Coleccion copia = new Coleccion(getDescuento());
+    public Coleccion copia(Condicion condicion) {
+            // crea la copia Coleccion
+
+        Coleccion copia = cascaron();
+
+            // recorre Elemento de la q no es copia
+
         for (Elemento elemento : elementos) {
+
+            // intenta asignar una copia del elemento en el q se paro
+
            Elemento aux= elemento.copia(condicion);
 
            if (aux != null){
+
+        // agrega aux a la copia de coleccion
+
                copia.addElemento(aux);
            }
         }
+        // verifica q copia elementos en su arraylist
+
         if (copia.tienefiguritas()){
             return copia;
         }
         return null;
+    }
+
+    public Coleccion cascaron(){
+    return new Coleccion(getDescuento());
     }
 }

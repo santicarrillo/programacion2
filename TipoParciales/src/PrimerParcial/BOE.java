@@ -1,10 +1,14 @@
 package PrimerParcial;
 
+import Parcial2023Printer3D.src.Elemento;
 import PrimerParcial.filtroybusqueda.Buscar;
 
 import java.util.ArrayList;
 
 public class BOE extends ComandoInt{
+
+
+
 
     @Override
     public ArrayList<Agente> buscar(Buscar b) {
@@ -24,6 +28,10 @@ public class BOE extends ComandoInt{
             }
         }
         return max;
+    }
+    public double getVeocidad(){
+
+        return miembros.get(miembros.size()-1).getvelocidad();
     }
 
     @Override

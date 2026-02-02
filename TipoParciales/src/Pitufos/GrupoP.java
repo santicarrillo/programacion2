@@ -6,24 +6,23 @@ import java.util.ArrayList;
 
 public abstract class GrupoP extends ElePitufo {
     ArrayList<ElePitufo> pitufos;
-    ArrayList<String> habilidades;
 
-    public GrupoP(ArrayList<ElePitufo> pitufos, ArrayList<String> habilidades) {
-        this.pitufos = pitufos;
-        this.habilidades = habilidades;
+    public GrupoP( ) {
+        this.pitufos = new ArrayList<>();
     }
  public void addElemento(ElePitufo pp){
         pitufos.add(pp);
  }
     @Override
     public ArrayList<String> getHabilidades() {
-       ArrayList<String>habilidades =this.habilidades;
+        ArrayList<String> resultado = new ArrayList<>();
         for (ElePitufo pitufo : pitufos) {
-            if(!pitufos.contains(pitufo)){
-                pitufos.add(pitufo);
+            for (String c: pitufo.getHabilidades())
+            if(!resultado.contains(pitufo)){
+                resultado.add(c);
             }
         }
-        return habilidades;
+        return resultado;
     }
 
     @Override
@@ -44,5 +43,18 @@ public abstract class GrupoP extends ElePitufo {
 
     @Override
     public abstract int getCreatividad() ;
+
+    public GrupoP getcopia(){
+        GrupoP copia= cascaron();
+
+        for (ElePitufo e: pitufos){
+            ElePitufo aux= e.getcopia();// recorre todos los hijos
+            copia.addElemento(aux);
+        }
+        return copia;
+    }
+    public GrupoP cascaron(){
+        return new GrupoP();
+    }
 
 }

@@ -9,7 +9,7 @@ public class ColeccionEx extends Coleccion{
     }
 
     @Override
-    public Elemento copia(Condicion condicion) {
+    public Coleccion copia(Condicion condicion) {
         return null;
     }
 }

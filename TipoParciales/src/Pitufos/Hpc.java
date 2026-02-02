@@ -24,4 +24,9 @@ public class Hpc extends GrupoP{
         }
         return MasAlto;
     }
+
+    @Override
+    public GrupoP cascaron() {
+        return super.cascaron();
+    }
 }

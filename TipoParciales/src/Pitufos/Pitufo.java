@@ -14,8 +14,8 @@ public  class Pitufo extends ElePitufo implements Comparable<Pitufo> {
     private int creatividad;
     private int experiencia;
 
-    public Pitufo(ArrayList<String> habilidades, String nombre, double velocidad, int creatividad, int experiencia) {
-        this.habilidades = habilidades;
+    public Pitufo( String nombre, double velocidad, int creatividad, int experiencia) {
+        this.habilidades = new ArrayList<>();
         this.nombre = nombre;
         this.velocidad = velocidad;
         this.creatividad = creatividad;
@@ -62,7 +62,7 @@ public  class Pitufo extends ElePitufo implements Comparable<Pitufo> {
 
     @Override
     public int compareTo(Pitufo o) {
-        int result = Integer.compare(this.getExperiencia(), o.getExperiencia());
+        int result = Integer.compare(this.getExperiencia(), o.getExperiencia());// this.getExperiencia() - o.getExperiencia()
         if (result == 0) {
             result = Double.compare(this.getVelocidad(), o.getVelocidad());
             if (result == 0) {
@@ -79,5 +79,14 @@ public  class Pitufo extends ElePitufo implements Comparable<Pitufo> {
             return 1;
         }
         return 0;
+    }
+
+    @Override
+    public Pitufo getcopia() {
+        Pitufo copia = cascaron();
+        return copia;
+    }
+    public Pitufo cascaron(){
+        return new Pitufo(getNombre(),getVelocidad(),getCreatividad(),getExperiencia());
     }
 }

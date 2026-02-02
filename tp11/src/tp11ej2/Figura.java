@@ -42,12 +42,16 @@ public class Figura extends Elemento {
     }
 
     @Override
-    public Elemento copia(Condicion condicion) {
+    public Figura copia(Condicion condicion) {
         if (condicion.cumple(this)){
-            Elemento copia = new Figura(getNombre(),getAlbum(),getnumero(),getprecio());
+            Figura copia = cascaron();
             return copia;
         }
         return null;
+    }
+
+    protected Figura cascaron(){
+        return new Figura(getNombre(),getAlbum(),getnumero(),getprecio());
     }
 }
 

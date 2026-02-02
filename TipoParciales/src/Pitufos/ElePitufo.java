@@ -9,6 +9,7 @@ public abstract class ElePitufo {
     public abstract int  getCreatividad();
     public abstract ArrayList<String> getHabilidades();
     public abstract int  ContarPitufo(Condicion c);
+    public abstract ElePitufo getcopia();
 
 
 }

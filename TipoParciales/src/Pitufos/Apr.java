@@ -5,9 +5,6 @@ import java.util.ArrayList;
 public class Apr extends GrupoP{
 
 
-    public Apr(ArrayList<ElePitufo> pitufos, ArrayList<String> habilidades) {
-        super(pitufos, habilidades);
-    }
 
     @Override
     public double getVelocidad() {
@@ -25,5 +22,8 @@ public class Apr extends GrupoP{
         return pitufos.get(0).getCreatividad();
     }
 
-
+    @Override
+    public Apr cascaron() {
+        return new Apr();
+    }
 }
